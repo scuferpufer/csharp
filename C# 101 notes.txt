@@ -1,0 +1,83 @@
+Stateless System vs Stateful System
+
+*Stateless System: A stateless system doesn't store information about past interactions with the system. Therefore, each interaction with the system is like the first interaction with it. 
+
+class Echo {
+    String echo(String input) {
+        return input; 
+    }
+}
+
+
+*Stateful System: A stateful system remembers previous interactions with the system and stores information about them. As a result, new interactions with the system may produce different outputs than previous interactions.
+
+class Counter {
+    private int count = 0;
+
+    int count() {
+        count++;
+        return count;
+    }
+}
+
+Add decision logic to code using if, else, and else if.
+
+If: The most widely used code branching statement is the if statement. 
+The if statement relies on a Boolean expression that is enclosed in a set of parentheses. 
+If the expression is true, the code after the if statement is executed. 
+If not, the .NET runtime ignores the code and doesn't execute it.
+
+if (total > 14)
+{
+    Console.WriteLine("You win!");
+}
+
+if (total < 15)
+{
+    Console.WriteLine("Sorry, you lose.");
+}
+
+At run time, the Boolean expression total > 14 is evaluated. If this is a true statement (if the value of total is greater than 14) then the flow of execution will continue into the code defined in the code block. In other words, it will execute the code in the curly braces.
+
+However, if the Boolean expression is false (the value of total not greater than 14) then the flow of execution will skip past the code block. In other words, it will not execute the code in the curly braces.
+
+Finally, the second if statement controls the message if the user loses. In the next unit, you'll use a variation on the if statement to shorten these two statements into a single statement that more clearly expresses the intent.
+
+CODE BLOCK: 
+
+What is a code block?
+A code block is a collection of one or more lines of code that are defined by an opening and closing curly brace symbol { }. It represents a complete unit of code that has a single purpose in your software system. In this case, at runtime, all lines of code in the code block are executed if the Boolean expression is true. Conversely, if the Boolean expression is false, all lines of code in the code block are ignored.
+
+You should also know that code blocks can contain other code blocks. In fact, it's common for one code block to be "nested" inside another code block in your applications. You'll begin nesting your own code blocks later in this module when you create one if statement inside the code block of another.
+
+Logical OR:
+
+if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
+{
+    Console.WriteLine("You rolled doubles! +2 bonus to total!");
+    total += 2;
+}
+
+Here you combine three Boolean expressions to create one composite Boolean expression in a single line of code. This is sometimes called a compound condition. You have one outer set of parentheses that combines three inner sets of parentheses separated by two pipe characters.
+
+The double pipe characters || are the logical OR operator, which basically says "either the expression to my left OR the expression to my right must be true in order for the entire Boolean expression to be true". If both Boolean expressions are false, then the entire Boolean expression is false. You use two logical OR operators so that you can extend the evaluation to a third Boolean expression.
+
+First, you evaluate (roll1 == roll2). If that's true, then the entire expression is true. If it's false, you evaluate (roll2 == roll3). If that's true, then the entire expression is true. If it's false, you evaluate (roll1 == roll3). If that's true, then the entire expression is true. If that is false, then the entire expression is false.
+
+If the composite Boolean expression is true, then you execute the following code block. This time, there are two lines of code. The first line of code prints a message to the user. The second line of code increments the value of total by 2
+
+Else Statement: 
+
+Here, if total >= 15 is false, then the code block following the else keyword will execute. Since the two outcomes are related opposites, this is a perfect scenario for the else keyword.
+
+if (total >= 15)
+{
+    Console.WriteLine("You win!");
+}
+else 
+{
+    Console.WriteLine("Sorry, you lose.");
+}
+
+
+The if, else if, and else statements allow you to create multiple exclusive conditions as Boolean expressions. In other words, when you only want one outcome to happen, but you have several possible conditions and results, use as many else if statements as you want. If none of the if and else if statements apply, the final else code block will be executed. The else is optional, but it must come last if you choose to include it.
